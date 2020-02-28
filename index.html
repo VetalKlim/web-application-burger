@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/foto1.png">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/burger-ic.jpg">
+
+    <title>BurgerClub</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="head-liner">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="img/logo.jpg" alt="logo" class="img-picture-logo">
+                    </a>
+                </div>
+                <div class="block-tel"><span class="icon-tel"></span> 099 332 33323
+                    <ul class="header-tel">
+                        <li class="header-tel-items"><span class="icon-tel"></span>099 332 33323</li>
+                        <li class="header-tel-items"><span class="icon-tel"></span>099 332 33323</li>
+                        <li class="header-tel-items"><span class="icon-tel"></span>099 332 33323</li>
+                        <!-- <hr>
+                        <li class="header-tel-items back-call" id='backCallId'><span class="icon-coll-back"></span>Обратный звонок</li> -->
+                    </ul>
+                </div>
+                <div class="block-menu">Наше меню
+                    <ul class="header-menu">
+                        <li class="header-menu-items"><span class="icon-burger"></span>Бургеры</li>
+                        <li class="header-menu-items"><span class="icon-pizza"></span>Пицца</li>
+                        <!-- <li class="header-menu-items"><span class="icon-hot-dog"></span>Хот-Дог</li> -->
+                        <!-- <li class="header-menu-items stock" id='stockId'><span class="icon-stock"></span>Акции</li> -->
+                        <!-- <li class="header-menu-items" id='deliveryId'><span class="icon-delivery"></span>Доставка</li> -->
+                    </ul>
+                </div>
+                <p class="header-text">Доставка работает с 10-00</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container position-main-block">
+            <div class="block-left">
+                <div class="block-menu burger" id='burgerId'></div>
+                <div class="block-menu pizza" id='pizzaId'></div>
+                <!-- <div class="block-menu hot-dog" id='hotDogId'></div> -->
+                <div class="block-menu drink" id='drinkId'></div>
+            </div>
+            <div class="btn-order">
+                <div class="basket-icon">
+                    <div class="numberOfOrdersInTheBasket" id="numberOfOrdersInTheBasket">0</div>
+                </div>
+            </div>
+            <div class="block-right">
+                <h4 class="order-menu"> Ваши заказы</h4>
+                <div class="basket-head">
+                    <span class="img-order">фото</span>
+                    <span class="ingredients-order">состав </span>
+                    <span class="quantity-product">количетво</span>
+                    <span class="praise-productm">цена (грн)</span>
+                </div>
+                <div class="theBasketIsCleared" id="theBasketIsCleared">Корзина пуста</div>
+                <div class="myOrder" id="myOrder"></div>
+
+                <div class="block-right-bottom">
+                    <div class="final-amount">
+                        <span class="final-amount__text">Общая цена заказа:</span>
+                        <div class="visual-final-prise">
+                            <span class="final-amount__number" id="finalPrise">0</span>
+                            <span class="final-amount__number">грн</span>
+                        </div>
+
+                    </div>
+                    <div class="order-button">Оформить заказ</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p style="color: white">Klimashevskiy VP </p>
+        </div>
+
+    </footer>
+
+
+    <div class="block-content-modal" id="content-modal"></div>
+    <div class="wrapper-modal" id="wrapper-modal"></div>
+
+    <div class="content-modal">
+        <div class="modal-block" id="burgerModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+            <h2 class="header-modal">Выбери свой бургер</h2>
+            <hr class="liner-modal">
+            <div class="wrapper-content">
+                <div class="modal-left-burger">
+                    <form action method="post" class="form" id="form">
+                        <p class="size-text">
+                            <span>Размер</span>
+                            <span>цена</span>
+                        </p>
+                        <div class="block-size-burger"> </div>
+                        <h5 class="size-text">Котлета</h5>
+                        <div class="block-cutlet-burger"></div>
+                        <hr>
+                        <h5 class="size-text">Начинка</h5>
+                        <div class="block-filling-burger"></div>
+                        <hr>
+                        <h5 class="size-text">Соус</h5>
+                        <div class="block-sauce-burger"></div>
+                    </form>
+                </div>
+                <div class="modal-right-burger">
+                    <div class="visual-food-burger">
+                        <div class="ingredients-burger">
+                            <span class="ingredients-text-burger">Ингридиенты:</span>
+                            <span id="ingredients-visual"></span>
+                        </div>
+                    </div>
+                    <div class="picture-product-burger">
+                        <img src="img/burger.jpg" alt="burger" class="img-product-burger">
+                    </div>
+                    <div class="info-food-burger">
+                        <div class="info-food__left-burger">
+                            <div class="prise-final-product">
+                                <span class="prise-text">Цена</span>
+                                <span class="prise-text" id="prise-number">0</span>
+                                <span class="prise-text">грн</span>
+                            </div>
+                        </div>
+
+                        <div class="info-food__right-burger">
+                            <div class="btn-send-to-cart" id="btn-send-to-cart-burger"> В корзину </div>
+                        </div>
+                    </div>
+                    <div class="error-block"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-block" id="pizzaModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+            <h2 class="header-modal"> Пицца</h2>
+            <hr class="liner-modal">
+            <div class="wrapper-content">
+                <div class="modal-left-pizza">
+                    <div class="block-pizza">
+                        <div class="block-pizza-auto " id="block-pizza-auto">Наши пиццы</div>
+                        <div class="block-own-pizza" id="block-own-pizza">Выбери свою пиццу</div>
+                    </div>
+                    <div class="content-block-pizza-auto ">
+
+                    </div>
+                    <div class="content-block-own-pizza">
+                        <div class="pizza-block-own">
+                            <form action method="post" class="form-Pizza" id="form">
+                                <p class="size-text">
+                                    <span>Размер</span>
+                                    <span>цена</span>
+                                </p>
+                                <div class="block-size-pizza"> </div>
+                                <hr>
+                                <h5 class="size-text">Начинка</h5>
+                                <div class="block-filling-pizza"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right-pizza">
+                    <div class="visual-food-pizza">
+                        <div class="name-pizza">
+                            <span class="name-pizza-text" id="name-pizza-text">Пицца</span>
+                        </div>
+                    </div>
+                    <div class="picture-product">
+                        <img src="img/pizza.jpg" alt="pizza" class="img-product pizza-picture">
+                        <img src="img/naepolitano.jpg" alt="pizzaNeapolitano" class="img-product img-picture">
+                        <img src="img/triSyra.jpg" alt="pizzaThreeCheeses" class="img-product img-picture">
+                        <img src="img/vegetarianskaya.jpg" alt="pizzaVegetarian" class="img-product img-picture">
+                        <img src="img/ohotnichya.jpg" alt="pizzaHunting" class="img-product img-picture">
+                        <img src="img/parma.jpg" alt="pizzaParma" class="img-product img-picture">
+                        <img src="img/paperoni.jpg" alt="pizzaPaperoni" class="img-product img-picture">
+                        <img src="img/peperchili.jpg" alt="pizzaPaperchili" class="img-product img-picture">
+                        <img src="img/getmanskaya.jpg" alt="pizzaGetmanskaya" class="img-product img-picture">
+                    </div>
+                    <div class="info-food-pizza">
+                        <div class="pizza-ingridients-info" id="ingredients-visual"></div>
+                        <div class="info-food__left">
+                            <div class="prise-final-product">
+                                <span class="prise-text">Цена</span>
+                                <span class="prise-text" id="prise-number">0</span>
+                                <span class="prise-text">грн</span>
+                            </div>
+                        </div>
+                        <div class="info-food__right-pizza">
+                            <div class="btn-pizza" id="btn-send-to-cart"> В корзину </div>
+                        </div>
+                    </div>
+                    <div class="error-block"></div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="modal-block" id="hotDogModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+        </div> -->
+        <div class="modal-block" id="drinkModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+            <h2 class="header-modal">Выбери свой Напиток</h2>
+            <hr class="liner-modal">
+            <div class="wrapper-content">
+                <div class="modal-left-drink">
+                    <form action method="post" class="form" id="form">
+                        <p class="size-text">
+                            <span>Газировка</span>
+                            <span>цена</span>
+                        </p>
+                        <div class="drink-block"></div>
+
+                    </form>
+                </div>
+                <div class="modal-right-drink">
+                    <div class="visual-food-drink">
+                        <div class="drink-ingridients-info" id="ingredients-visual"></div>
+                        <div class="name-drink">
+                            <span class="name-drink-text" id="name-drink-text"></span>
+                        </div>
+                    </div>
+                    <div class="picture-product">
+                        <img src="img/pepsi.jpg" alt="pepsi" class="img-product img-picture">
+                        <img src="img/sprite.jpg" alt="sprite" class="img-product img-picture">
+                        <img src="img/fanta.jpg" alt="fanta" class="img-product img-picture">
+                        <img src="img/americano.jpg" alt="americano" class="img-product img-picture">
+                        <img src="img/cappuccino.jpg" alt="cappuccino" class="img-product img-picture">
+                        <img src="img/latte.jpg" alt="latte" class="img-product img-picture">
+                        <img src="img/cacao.jpg" alt="cacao" class="img-product img-picture">
+                        <img src="img/teaGreen.jpg" alt="teaGreen" class="img-product img-picture">
+                        <img src="img/teaBleak.jpg" alt="teaBleak" class="img-product pizza-picture">
+                        <img src="img/teaFruit.jpg" alt="teaFruit" class="img-product img-picture">
+                        <img src="img/multifruit.jpg" alt="multifruit" class="img-product img-picture">
+                        <img src="img/orange.jpg" alt="orange" class="img-product img-picture">
+                        <img src="img/tomato.jpg" alt="tomato" class="img-product img-picture">
+                        <img src="img/vegetable.jpg" alt="vegetable" class="img-product pizza-picture">
+                        <img src="img/grapeAndApple.jpg" alt="grapeAndApple" class="img-product img-picture">
+                        <img src="img/carrotAndPumpkin.jpg" alt="carrotAndPumpkin" class="img-product pizza-picture">
+                    </div>
+                    <div class="info-food-drink">
+
+                        <div class="info-food__left">
+                            <div class="prise-final-product">
+                                <span class="prise-text">Цена</span>
+                                <span class="prise-text" id="prise-number">0</span>
+                                <span class="prise-text">грн</span>
+                            </div>
+                        </div>
+                        <div class="info-food__center">
+                            <div class="counter-product">
+                                <div class="counter-quantity" id="counter-quantity">1</div>
+                            </div>
+                        </div>
+                        <div class="info-food__right-drink">
+                            <div class="btn-drink" id="btn-send-to-cart"> В корзину </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="modal-block" id="stockModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+            <h1>stockModal</h1>
+        </div> -->
+        <div class="modal-block" id="backCallModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+            <h1>backCallId</h1>
+        </div>
+        <div class="modal-block" id="deliveryModal">
+            <div class="btnClose" id="btnCloseModal">
+                <div class="btnCloseModal"></div>
+            </div>
+            <h1>deliveryModal</h1>
+        </div>
+    </div>
+    </div>
+    <script src="js/jquery.js "></script>
+    <script src="js/prise.js"></script>
+    <script src="js/main.js "></script>
+
+</body>
+
+</html>
